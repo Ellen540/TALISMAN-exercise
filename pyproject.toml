@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "talisman-exercise"
+version = "1.0.0"
+description = "TALISMAN take-home: get to know a small (simulated) laser-spot test bench"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = ["numpy>=1.24,<3", "scipy>=1.10", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab>=4"]
+dev = ["pytest>=7", "black>=24"]
+
+[tool.setuptools]
+packages = ["talisman"]
+
+[tool.setuptools.package-data]
+talisman = ["*.pyc"]
+
+[tool.black]
+line-length = 88
